@@ -1,0 +1,317 @@
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: 1s;
+  border-bottom: 1.5px solid #ffff;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+}
+
+.nav-brand svg {
+  margin-right: 10px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links li {
+  margin-right: 20px;
+  position: relative; /* Add position: relative; for the hover effect */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: whitesmoke;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #387cca;
+}
+
+.nav-links a:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -10px; /* adjust the position of the line */
+  left: 0;
+  width: 100%;
+  height: 4px; /* adjust the height of the line */
+  background-color: #387cca; /* blue line */
+}
+
+.nav-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-login{
+  border-color: rgb(39, 108, 213);
+  background-color: black;
+  color: #4190eb;
+  &:hover{
+    color: white;
+    border-color:white ;
+  }
+}
+
+.btn-signup {
+ background-color: rgb(49, 47, 47);
+ color: aliceblue;
+ &:hover{
+  background-color: black;
+  border-color: white ;
+  color:#3a8ae7;
+ }
+}
+
+.btn-menu {
+  background-color: #0000;
+  color: whitesmoke;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-left: 1rem;
+  display: none;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.btn-menu:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+
+/* .mobile-drawer {
+  position: fixed;
+  margin-top: 3rem;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  transform: translateX(100%);
+  transition: transform 0.2s ease-in-out;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 30px;
+}
+
+.mobile-drawer.open {
+  transform: translateX(0);
+  animation: slideIn 0.5s forwards;
+}
+
+.mobile-drawer {
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+} */
+ /* ... other styles ... */
+
+.mobile-drawer {
+  position: fixed;
+  margin-top: 3rem;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.8); /* Blue-black glass background */
+  backdrop-filter: blur(10px); /* Add a blur effect */
+  transform: translateX(100%);
+  transition: transform 0.2s ease-in-out;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 30px;
+  /* Add 3D properties */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Add a shadow */
+  perspective: 1000px; /* Add perspective */
+}
+
+.mobile-drawer.open {
+  transform: translateX(0);
+  animation: slideIn 0.5s forwards;
+}
+
+.mobile-drawer {
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* ... other styles ... */
+
+.mobile-drawer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-drawer li {
+  margin-top: 2rem;
+  margin-left: 7.5rem;
+  margin-bottom: 5px;
+}
+
+.mobile-drawer a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.mobile-drawer a:hover {
+  color: #387cca;
+}
+
+.mobile-drawer-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.mobile-drawer-btn-signin,
+.mobile-drawer-btn-signup {
+  background-color: #0000;
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.mobile-drawer-btn-signin:hover,
+.mobile-drawer-btn-signup:hover {
+  background-color: white;
+  color: black;
+  transform: perspective(1000px) rotateY(10deg) translateZ(20px);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+}
+
+.mobile-drawer-btn-signin:active,
+.mobile-drawer-btn-signup:active {
+  transform: perspective(1000px) rotateY(10deg) translateZ(10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 1024px) {
+  .nav-container {
+    flex-direction: row;
+  }
+
+  .nav-brand {
+    margin-right: auto;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-actions {
+    margin-left: auto;
+  }
+
+  .btn-login,
+  .btn-signup {
+    display: none;
+  }
+
+  .btn-menu {
+    display: block;
+  }
+
+  .mobile-drawer {
+    position: fixed;
+    margin-top: 3rem;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    border: radius 10px;
+    z-index: 1;
+
+    background-color: rgba(0, 0, 0, 0.8); /* Blue-black glass background */
+    backdrop-filter: blur(10px); /* Add a blur effect */
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .mobile-drawer.open {
+    transform: translateX(0);
+  }
+
+  .mobile-drawer ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobile-drawer li {
+    margin-bottom: 10px;
+  }
+
+  .mobile-drawer-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobile-drawer-btn-signin,
+  .mobile-drawer-btn-signup {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-links ul {
+    display: flex;
+  }
+
+  .btn-login,
+  .btn-signup {
+    display: block;
+  }
+
+  .mobile-drawer {
+    display: none;
+  }
+
+  .btn-menu {
+    display: none;
+  }
+}

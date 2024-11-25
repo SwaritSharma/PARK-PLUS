@@ -1,0 +1,139 @@
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background-color: black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: 1s;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+}
+
+.footer-brand svg {
+  margin-right: 10px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links li {
+  margin-right: 20px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: whitesmoke;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #387cca;
+}
+
+.footer-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  transform: perspective(1000px) rotateY(0deg) translateZ(0);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  overflow: hidden;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+.footer-btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transform: translateZ(-10px);
+  z-index: -1;
+}
+
+.footer-btn:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  transform: translateZ(10px);
+  z-index: 2;
+}
+
+.footer-btn:hover {
+  background-color: white;
+  color: black;
+
+  transform: perspective(1000px) rotateY(10deg) translateZ(20px);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+}
+
+.footer-btn:active {
+  transform: perspective(1000px) rotateY(10deg) translateZ(10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Media queries */
+
+@media (max-width: 1024px) {
+  .footer-container {
+    flex-direction: row;
+  }
+  .footer-brand {
+    margin-right: auto;
+  }
+  .footer-links {
+    display: none;
+  }
+  .footer-actions {
+    margin-left: auto;
+  }
+  .footer-btn {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-links ul {
+    display: flex;
+  }
+  .footer-btn {
+    display: block;
+  }
+}
